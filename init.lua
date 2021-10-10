@@ -6,6 +6,8 @@ require('colorscheme')
 require('statusline')
 require('find')
 require('format-settings')
+require('snippets')
+require('explore')
 
 vim.o.number = true
 vim.o.relativenumber = true

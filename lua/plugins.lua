@@ -1,6 +1,7 @@
 return require('packer').startup(function()
   use 'sheerun/vim-polyglot'
   use 'folke/tokyonight.nvim'
+  use "projekt0n/github-nvim-theme"
 
   use 'mcchrish/nnn.vim'
 
@@ -45,4 +46,19 @@ return require('packer').startup(function()
   use 'svermeulen/vimpeccable'
 
   use 'lukas-reineke/format.nvim'
+
+  use 'dcampos/nvim-snippy'
+  use 'dcampos/compe-snippy'
+
+  use "tversteeg/registers.nvim"
+
+  use {
+    'kyazdani42/nvim-tree.lua',
+    requires = 'kyazdani42/nvim-web-devicons',
+  }
+
+  use {
+    'yamatsum/nvim-nonicons',
+    requires = {'kyazdani42/nvim-web-devicons'}
+  }
 end)

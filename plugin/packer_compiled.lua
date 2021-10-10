@@ -69,6 +69,10 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["compe-snippy"] = {
+    loaded = true,
+    path = "/home/jb/.local/share/nvim/site/pack/packer/start/compe-snippy"
+  },
   ["format.nvim"] = {
     loaded = true,
     path = "/home/jb/.local/share/nvim/site/pack/packer/start/format.nvim"
@@ -76,6 +80,10 @@ _G.packer_plugins = {
   ["fzf-lua"] = {
     loaded = true,
     path = "/home/jb/.local/share/nvim/site/pack/packer/start/fzf-lua"
+  },
+  ["github-nvim-theme"] = {
+    loaded = true,
+    path = "/home/jb/.local/share/nvim/site/pack/packer/start/github-nvim-theme"
   },
   kommentary = {
     loaded = true,
@@ -109,6 +117,18 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/jb/.local/share/nvim/site/pack/packer/start/nvim-lspinstall"
   },
+  ["nvim-nonicons"] = {
+    loaded = true,
+    path = "/home/jb/.local/share/nvim/site/pack/packer/start/nvim-nonicons"
+  },
+  ["nvim-snippy"] = {
+    loaded = true,
+    path = "/home/jb/.local/share/nvim/site/pack/packer/start/nvim-snippy"
+  },
+  ["nvim-tree.lua"] = {
+    loaded = true,
+    path = "/home/jb/.local/share/nvim/site/pack/packer/start/nvim-tree.lua"
+  },
   ["nvim-treesitter"] = {
     loaded = true,
     path = "/home/jb/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
@@ -121,6 +141,10 @@ _G.packer_plugins = {
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/home/jb/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
+  },
+  ["registers.nvim"] = {
+    loaded = true,
+    path = "/home/jb/.local/share/nvim/site/pack/packer/start/registers.nvim"
   },
   ["surround.nvim"] = {
     config = { "\27LJ\2\n:\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\rsurround\frequire\0" },
