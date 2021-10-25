@@ -1,7 +1,15 @@
 return require('packer').startup(function()
+  -- Packer can manage itself
+  use 'wbthomason/packer.nvim'
+
   use 'sheerun/vim-polyglot'
   use 'folke/tokyonight.nvim'
   use "projekt0n/github-nvim-theme"
+  use 'rose-pine/neovim'
+
+  use 'tpope/vim-unimpaired'
+  use 'tpope/vim-fugitive'
+  use 'tpope/vim-repeat'
 
   use 'mcchrish/nnn.vim'
 
@@ -10,11 +18,9 @@ return require('packer').startup(function()
     requires = {'kyazdani42/nvim-web-devicons', opt = true}
   }
 
-  use { 'ibhagwan/fzf-lua',
-    requires = {
-      'vijaymarupudi/nvim-fzf',
-      'kyazdani42/nvim-web-devicons'
-    } -- optional for icons
+  use {
+    'nvim-telescope/telescope.nvim',
+    requires = { {'nvim-lua/plenary.nvim'}, {'kyazdani42/nvim-web-devicons'} }
   }
 
   use {
@@ -22,12 +28,7 @@ return require('packer').startup(function()
     run = ':TSUpdate'
   }
 
-  use {
-    "blackCauldron7/surround.nvim",
-    config = function()
-      require"surround".setup {}
-    end
-  }
+  use 'tpope/vim-surround'
 
   use {
     "windwp/nvim-ts-autotag",
@@ -39,16 +40,20 @@ return require('packer').startup(function()
   use 'b3nj5m1n/kommentary'
 
   use 'neovim/nvim-lspconfig'
-  use 'kabouzeid/nvim-lspinstall'
-  use 'hrsh7th/nvim-compe'
+  use {
+    'neovim/nvim-lspconfig',
+    'williamboman/nvim-lsp-installer',
+  }
   use 'glepnir/lspsaga.nvim'
+
+  use { 'ms-jpq/coq_nvim', branch = 'coq' }
+  use { 'ms-jpq/coq.thirdparty', branch = '3p' }
 
   use 'svermeulen/vimpeccable'
 
   use 'lukas-reineke/format.nvim'
 
   use 'dcampos/nvim-snippy'
-  use 'dcampos/compe-snippy'
 
   use "tversteeg/registers.nvim"
 
@@ -61,4 +66,10 @@ return require('packer').startup(function()
     'yamatsum/nvim-nonicons',
     requires = {'kyazdani42/nvim-web-devicons'}
   }
+
+  use {
+    'evanleck/vim-svelte'
+  }
+
+  use 'vimwiki/vimwiki'
 end)

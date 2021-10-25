@@ -1,10 +1,3 @@
-vim.api.nvim_exec([[
-  augroup Format
-    autocmd!
-    autocmd BufWritePost * FormatWrite
-  augroup END
-]], true)
-
 require "format".setup {
     ["*"] = {
         {cmd = {"sed -i 's/[ \t]*$//'"}} -- remove trailing whitespace
@@ -21,6 +14,9 @@ require "format".setup {
     javascriptreact = {
         {cmd = {"prettier -w", "./node_modules/.bin/eslint --fix"}}
     },
+    svelte = {
+        {cmd = {"prettier -w"}}
+    },
     css = {
         {cmd = {"prettier -w"}}
     },
@@ -31,3 +27,6 @@ require "format".setup {
         {cmd = {"prettier -w"}}
     },
 }
+
+
+vimp.nnoremap('<leader>F', ':FormatWrite<cr>')
