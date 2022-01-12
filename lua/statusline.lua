@@ -12,16 +12,16 @@ require('lualine').setup({
         path = 1 -- 0 = just filename, 1 = relative path, 2 = absolute path
       }
     },
-    lualine_x = {
+    --[[ lualine_x = {
       {
         'diff',
       },
       {
         'diagnostics',
-        sources = { 'nvim_lsp' },
+        sources = { 'nvim_diagnostic' },
       }
-    },
-    lualine_y = {
+    }, ]]
+    --[[ lualine_y = {
       {
         'fileformat'
       },
@@ -32,11 +32,11 @@ require('lualine').setup({
         'filetype',
         colored = true -- displays filetype icon in color if set to `true`
       },
-    },
-    lualine_z = {
+    }, ]]
+    --[[ lualine_z = {
       {
         'location',
       },
-    }
+    } ]]
   }
 })

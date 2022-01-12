@@ -1,6 +1,13 @@
 local vimp = require('vimp')
 local lsp_installer = require("nvim-lsp-installer")
 
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+    vim.lsp.diagnostic.on_publish_diagnostics, {
+        underline = false,
+        virtual_text = false,
+    }
+)
+
 lsp_installer.on_server_ready(function(server)
     local opts = {
         ui = {
@@ -57,7 +64,6 @@ lsp_installer.on_server_ready(function(server)
     vim.cmd [[ do User LspAttachBuffers ]]
 end)
 
-vimp.nnoremap({ 'silent' }, 'gd', ':lua vim.lsp.buf.definition()<cr>')
 vimp.nnoremap({ 'silent' }, 'gD', ':lua vim.lsp.buf.declaration()<cr>')
 
 require'lspsaga'.init_lsp_saga {
@@ -69,27 +75,28 @@ require'lspsaga'.init_lsp_saga {
     virtual_text = false,
   },
 }
-vimp.nnoremap({ 'silent' }, '<leader>ca', ':Lspsaga code_action<cr>')
-vimp.vnoremap({ 'silent' }, '<leader>ca', ':<C-U>Lspsaga range_code_action<cr>')
 vimp.nnoremap({ 'silent' }, 'K', ':Lspsaga hover_doc<cr>')
 vimp.nnoremap({ 'silent' }, 'gr', ':Lspsaga rename<cr>')
 vimp.nnoremap({ 'silent' }, 'L', ':Lspsaga show_line_diagnostics<cr>')
 vimp.nnoremap({ 'silent' }, 'gs', ':Lspsaga signature_help<cr>')
-vimp.nnoremap({ 'silent' }, '[e', ':Lspsaga diagnostic_jump_next<CR>')
-vimp.nnoremap({ 'silent' }, ']e', ':Lspsaga diagnostic_jump_prev<CR>')
+vimp.nnoremap({ 'silent' }, ']e', ':Lspsaga diagnostic_jump_next<CR>')
+vimp.nnoremap({ 'silent' }, '[e', ':Lspsaga diagnostic_jump_prev<CR>')
 vimp.nnoremap({ 'silent' }, 'gh', ':Lspsaga lsp_finder<CR>')
 
 local vimp = require('vimp')
 
 require('telescope').setup{ }
 
-vimp.nnoremap('<leader>ff', ':Telescope find_files<cr>')
-vimp.nnoremap('<leader>o', ':Telescope git_files<cr>')
-vimp.nnoremap('<leader>fg', ':Telescope live_grep<cr>')
-vimp.nnoremap('<leader>fe', ':Telescope buffers<cr>')
-vimp.nnoremap('<leader>e', ':Telescope oldfiles<cr>')
-vimp.nnoremap('<leader>fs', ':Telescope grep_string<cr>')
-vimp.nnoremap('<leader>gR', ':Telescope lsp_references<cr>')
-vimp.nnoremap('<leader>gs', ':Telescope git_status<cr>')
-vimp.nnoremap('<leader>gS', ':Telescope git_stash<cr>')
-vimp.nnoremap('<leader>gb', ':Telescope git_branches<cr>')
+vimp.nnoremap({ 'silent' }, '<leader>ff', ':Telescope find_files<cr>')
+vimp.nnoremap({ 'silent' }, '<leader>o', ':Telescope git_files<cr>')
+vimp.nnoremap({ 'silent' }, '<leader>fg', ':Telescope live_grep<cr>')
+vimp.nnoremap({ 'silent' }, '<leader>fe', ':Telescope buffers<cr>')
+vimp.nnoremap({ 'silent' }, '<leader>e', ':Telescope oldfiles<cr>')
+vimp.nnoremap({ 'silent' }, '<leader>fs', ':Telescope grep_string<cr>')
+vimp.nnoremap({ 'silent' }, '<leader>gR', ':Telescope lsp_references<cr>')
+vimp.nnoremap({ 'silent' }, '<leader>gs', ':Telescope git_status<cr>')
+vimp.nnoremap({ 'silent' }, '<leader>gS', ':Telescope git_stash<cr>')
+vimp.nnoremap({ 'silent' }, '<leader>gb', ':Telescope git_branches<cr>')
+vimp.nnoremap({ 'silent' }, '<leader>ca', ':Telescope lsp_code_actions<cr>')
+vimp.nnoremap({ 'silent' }, 'gd', ':Telescope lsp_definitions<cr>')
+vimp.nnoremap({ 'silent' }, 'gi', ':Telescope lsp_implementations<cr>')

@@ -31,9 +31,16 @@ return require('packer').startup(function()
   use 'tpope/vim-surround'
 
   use {
-    "windwp/nvim-ts-autotag",
+    'windwp/nvim-ts-autotag',
     config = function()
-      require"nvim-ts-autotag".setup()
+      require'nvim-ts-autotag'.setup()
+    end
+  }
+
+  use {
+    'windwp/nvim-autopairs',
+    config = function()
+      require'nvim-autopairs'.setup();
     end
   }
 
@@ -41,17 +48,16 @@ return require('packer').startup(function()
 
   use 'neovim/nvim-lspconfig'
   use {
-    'neovim/nvim-lspconfig',
     'williamboman/nvim-lsp-installer',
   }
-  use 'glepnir/lspsaga.nvim'
+  use { 'tami5/lspsaga.nvim', branch = 'nvim6.0' }
 
   use { 'ms-jpq/coq_nvim', branch = 'coq' }
   use { 'ms-jpq/coq.thirdparty', branch = '3p' }
 
   use 'svermeulen/vimpeccable'
 
-  use 'lukas-reineke/format.nvim'
+  use 'mhartington/formatter.nvim'
 
   use 'dcampos/nvim-snippy'
 
@@ -67,9 +73,9 @@ return require('packer').startup(function()
     requires = {'kyazdani42/nvim-web-devicons'}
   }
 
-  use {
-    'evanleck/vim-svelte'
-  }
+  use 'evanleck/vim-svelte'
+ 
+  use 'mattn/emmet-vim'
 
   use 'vimwiki/vimwiki'
 end)

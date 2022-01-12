@@ -1,32 +1,69 @@
-require "format".setup {
-    ["*"] = {
-        {cmd = {"sed -i 's/[ \t]*$//'"}} -- remove trailing whitespace
-    },
-    javascript = {
-        {cmd = {"prettier -w", "./node_modules/.bin/eslint --fix"}}
-    },
-    typescript = {
-        {cmd = {"prettier -w", "./node_modules/.bin/eslint --fix"}}
-    },
-    typescriptreact = {
-        {cmd = {"prettier -w", "./node_modules/.bin/eslint --fix"}}
-    },
-    javascriptreact = {
-        {cmd = {"prettier -w", "./node_modules/.bin/eslint --fix"}}
-    },
-    svelte = {
-        {cmd = {"prettier -w"}}
-    },
-    css = {
-        {cmd = {"prettier -w"}}
-    },
-    html = {
-        {cmd = {"prettier -w"}}
-    },
-    json = {
-        {cmd = {"prettier -w"}}
-    },
+require("formatter").setup {
+    filetype = {
+        typescriptreact = {
+            function()
+                return {
+                    exe = "prettier",
+                    args = {"--stdin", "--stdin-filepath", vim.fn.fnameescape(vim.api.nvim_buf_get_name(0))},
+                    stdin = true,
+                }
+            end
+        },
+        typescript = {
+            function()
+                return {
+                    exe = "prettier",
+                    args = {"--stdin", "--stdin-filepath", vim.fn.fnameescape(vim.api.nvim_buf_get_name(0))},
+                    stdin = true,
+                }
+            end
+        },
+        javascriptreact = {
+            function()
+                return {
+                    exe = "prettier",
+                    args = {"--stdin", "--stdin-filepath", vim.fn.fnameescape(vim.api.nvim_buf_get_name(0))},
+                    stdin = true,
+                }
+            end
+        },
+        javascript = {
+            function()
+                return {
+                    exe = "prettier",
+                    args = {"--stdin", "--stdin-filepath", vim.fn.fnameescape(vim.api.nvim_buf_get_name(0))},
+                    stdin = true,
+                }
+            end
+        },
+        svelte = {
+            function()
+                return {
+                    exe = "prettier",
+                    args = {"--stdin", "--stdin-filepath", vim.fn.fnameescape(vim.api.nvim_buf_get_name(0))},
+                    stdin = true,
+                }
+            end
+        },
+        css = {
+            function()
+                return {
+                    exe = "prettier",
+                    args = {"--stdin", "--stdin-filepath", vim.fn.fnameescape(vim.api.nvim_buf_get_name(0))},
+                    stdin = true,
+                }
+            end
+        },
+        json = {
+            function()
+                return {
+                    exe = "prettier",
+                    args = {"--stdin", "--stdin-filepath", vim.fn.fnameescape(vim.api.nvim_buf_get_name(0))},
+                    stdin = true,
+                }
+            end
+        },
+    }
 }
-
 
 vimp.nnoremap('<leader>F', ':FormatWrite<cr>')
