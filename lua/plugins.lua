@@ -3,7 +3,7 @@ return require('packer').startup(function()
   use 'wbthomason/packer.nvim'
 
   use 'sheerun/vim-polyglot'
-  use 'folke/tokyonight.nvim'
+  use 'leafOfTree/vim-svelte-plugin'
   use "projekt0n/github-nvim-theme"
   use 'rose-pine/neovim'
 
@@ -30,36 +30,9 @@ return require('packer').startup(function()
 
   use 'tpope/vim-surround'
 
-  use {
-    'windwp/nvim-ts-autotag',
-    config = function()
-      require'nvim-ts-autotag'.setup()
-    end
-  }
-
-  use {
-    'windwp/nvim-autopairs',
-    config = function()
-      require'nvim-autopairs'.setup();
-    end
-  }
-
   use 'b3nj5m1n/kommentary'
 
-  use 'neovim/nvim-lspconfig'
-  use {
-    'williamboman/nvim-lsp-installer',
-  }
-  use { 'tami5/lspsaga.nvim', branch = 'nvim6.0' }
-
-  use { 'ms-jpq/coq_nvim', branch = 'coq' }
-  use { 'ms-jpq/coq.thirdparty', branch = '3p' }
-
   use 'svermeulen/vimpeccable'
-
-  use 'mhartington/formatter.nvim'
-
-  use 'dcampos/nvim-snippy'
 
   use "tversteeg/registers.nvim"
 
@@ -72,10 +45,9 @@ return require('packer').startup(function()
     'yamatsum/nvim-nonicons',
     requires = {'kyazdani42/nvim-web-devicons'}
   }
-
-  use 'evanleck/vim-svelte'
- 
   use 'mattn/emmet-vim'
 
   use 'vimwiki/vimwiki'
+
+  use { 'neoclide/coc.nvim', branch = 'release' }
 end)

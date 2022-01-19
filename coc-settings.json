@@ -1,0 +1,5 @@
+{
+  "eslint.autoFixOnSave": true,
+  "svelte.enable-ts-plugin": true,
+  "coc.preferences.formatOnSaveFiletypes": ["css", "markdown", "html", "svelte", "json", "typescript", "typescriptreact", "javascript", "javascriptreact"]
+}
