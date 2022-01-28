@@ -104,11 +104,6 @@ _G.packer_plugins = {
     path = "/Users/jb/.local/share/nvim/site/pack/packer/start/nnn.vim",
     url = "https://github.com/mcchrish/nnn.vim"
   },
-  ["nvim-nonicons"] = {
-    loaded = true,
-    path = "/Users/jb/.local/share/nvim/site/pack/packer/start/nvim-nonicons",
-    url = "https://github.com/yamatsum/nvim-nonicons"
-  },
   ["nvim-tree.lua"] = {
     loaded = true,
     path = "/Users/jb/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",

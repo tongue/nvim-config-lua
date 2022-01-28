@@ -13,10 +13,7 @@ return require('packer').startup(function()
 
   use 'mcchrish/nnn.vim'
 
-  use {
-    'hoob3rt/lualine.nvim',
-    requires = {'kyazdani42/nvim-web-devicons', opt = true}
-  }
+  use 'hoob3rt/lualine.nvim'
 
   use {
     'nvim-telescope/telescope.nvim',
@@ -36,15 +33,8 @@ return require('packer').startup(function()
 
   use "tversteeg/registers.nvim"
 
-  use {
-    'kyazdani42/nvim-tree.lua',
-    requires = 'kyazdani42/nvim-web-devicons',
-  }
+  use 'kyazdani42/nvim-tree.lua' 
 
-  use {
-    'yamatsum/nvim-nonicons',
-    requires = {'kyazdani42/nvim-web-devicons'}
-  }
   use 'mattn/emmet-vim'
 
   use 'vimwiki/vimwiki'
