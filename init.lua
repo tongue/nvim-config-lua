@@ -1,17 +1,42 @@
 local vimp = require('vimp')
 
 vim.cmd([[
-	let g:nvim_tree_show_icons = {
+  let g:nvim_tree_show_icons = {
     \ 'git': 0,
     \ 'folders': 0,
     \ 'files': 0,
     \ 'folder_arrows': 0,
     \ }
-	]]);
+  ]]);
 
-require('plugins')
-
-require('statusline')
+require('packer').startup(function()
+    use 'wbthomason/packer.nvim'
+    use 'sheerun/vim-polyglot'
+    use 'leafOfTree/vim-svelte-plugin'
+    use "projekt0n/github-nvim-theme"
+    use 'rose-pine/neovim'
+    use 'tpope/vim-unimpaired'
+    use 'tpope/vim-fugitive'
+    use 'tpope/vim-repeat'
+    use 'mcchrish/nnn.vim'
+    use 'hoob3rt/lualine.nvim'
+    use {
+        'nvim-telescope/telescope.nvim',
+        requires = { {'nvim-lua/plenary.nvim'}, {'kyazdani42/nvim-web-devicons'} }
+    }
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = ':TSUpdate'
+    }
+    use 'tpope/vim-surround'
+    use 'b3nj5m1n/kommentary'
+    use 'svermeulen/vimpeccable'
+    use "tversteeg/registers.nvim"
+    use 'kyazdani42/nvim-tree.lua' 
+    use 'mattn/emmet-vim'
+    use 'vimwiki/vimwiki'
+    use { 'neoclide/coc.nvim', branch = 'release' }
+end)
 
 --
 -- settings
@@ -91,3 +116,22 @@ vimp.nnoremap({ 'silent' }, '<leader>gS', ':Telescope git_stash<cr>')
 vimp.nnoremap({ 'silent' }, '<leader>gb', ':Telescope git_branches<cr>')
 
 vimp.nnoremap('-', ':NnnPicker %:p:h<cr>')
+
+-- statusline
+require('lualine').setup({
+        options = {
+            theme = 'rose-pine',
+            section_separators = '',
+            component_separators = ''
+        },
+        sections = {
+            lualine_c = {
+                {
+                    'filename',
+                    file_status = true, -- displays file status (readonly status, modified status)
+                    path = 1 -- 0 = just filename, 1 = relative path, 2 = absolute path
+                }
+            },
+        }
+    })
+
