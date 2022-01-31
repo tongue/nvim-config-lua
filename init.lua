@@ -117,6 +117,11 @@ vimp.nnoremap({ 'silent' }, '<leader>gb', ':Telescope git_branches<cr>')
 
 vimp.nnoremap('-', ':NnnPicker %:p:h<cr>')
 
+vim.cmd([[
+let g:vimwiki_list = [{'path': '~/vimwiki/',
+                  \ 'syntax': 'markdown', 'ext': '.md'}]
+    ]]);
+
 -- statusline
 require('lualine').setup({
         options = {
